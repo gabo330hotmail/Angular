@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!-- Nombre de la aplicacion en la directiva ng-app-->
+<html ng-app="">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <!--El ng-model guarda el texto que se escriba en el campo -->
+            <input type="text" name="miNombre" ng-model="miNombre" value="5" size="40" /> 
+            <!--Para ver la informacion del model se hace de la siguiente 
+            forma-->
+            <p>{{ miNombre }}</p>
+            <!--Cambio el valor que tiene almacenado el ng-model -->
+            <input type="submit" value="Enviar" name="enviar" ng-click="miNombre='Edwim Duarte'" />
+            
+        </div>
+        <!--directiva de inicializacion ng-init -->
+        <div>
+            <span ng-init="x=4"></span>
+           
+
+        </div>
+        <div>
+        <!-- Funcion o Directiva ng-if-->
+        <span ng-if="x===5">x es igual que 5</span>
+        <span ng-if="x<=5">x es menor que 5</span>
+        <span ng-if="x>=5">x es mayor que 5</span>
+        </div>
+        <!--Directiva ng-click-->
+        <div>
+            <div>{{ contador }}</div>  
+            <input type="button" value="clickeame" name="incremento"  ng-click="contador=contador+1" ng-init="contador=0"/>
+        </div>
+        
+         <!--Directiva ng-mouseOver-->
+        <div>
+            <div>{{ contador1 }}</div>  
+            <input type="button" value="Pasa el mouse por encima" name="incremento" ng-mouseover="contador1=contador1+1" ng-init="contador1=0"/>
+        </div>
+         
+         <!--Directiva ng-dblclick-->
+        <div>
+            <div>{{ contador2 }}</div>  
+            <input type="button" value="Utiliza el doble click" name="incremento" ng-dblclick="contador2=contador2+1" ng-init="contador2=0"/>
+        </div>
+         
+          <!--Directiva ng-show ng-hide-->
+        
+            
+            <input type="checkbox" ng-model="showHide"/>
+            <br/>
+            <span ng-show="showHide">show esta seleccionado</span>
+            <span ng-hide="showHide">show no esta seleccionado</span>
+        
+          
+          <!--ng-repeat -->
+          <div>
+          <div ng-init="personas=[
+              {nombre:'Raul',pais:'Colombia'},
+              {nombre:'Claudia',pais:'Venezuela'},
+              {nombre:'Jhon',pais:'Ecuador'},{nombre:'Bianca',pais:'Argentina'}]">
+           </div>
+          <span ng-repeat="persona in personas">{{persona.nombre+" es de "+persona.pais}}
+          <br/>
+          </span>
+              </div>
+          <!--Directiva ng-class -->
+          
+    </body>
+</html>

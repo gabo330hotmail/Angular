@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <!--Muestra como vincular una imagen a angular.
+            codigos a utilizar para el ejemplo son:
+            90884717210
+            40796308305-->
+            <input type="text" name="fbID" value="" size="40" ng-model="fbID" />
+            <p> <img src="https://graph.facebook.com/{{fbID}}/picture? type=normal"  />
+            </p>
+        </div>
+    </body>
+</html>
